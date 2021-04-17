@@ -1,0 +1,43 @@
+
+x=c(36,28,19,22,27,28,30, 31, 38, 46, 40, 29, 21, 28, 39, 46, 43, 27, 30,54)
+x
+
+#Calculo el numero de valores que se repiten, y tambien calculo el numero total de valores con la funcion length
+table(x)
+length(x)
+
+#19 21 22 27 28 29 30 31 36 38 39 40 43 46 54 
+# 1  1  1  2  3  1  2  1  1  1  1  1  1  2  1
+
+#Para calcular la media hago la suma de los valores con la funcio sum() y lo divido entre el numero total de elementos con length()
+mean=sum(x)/length(x)
+print(mean)
+mean(x)
+
+#Para calcular el rango hacemos la resta entre el maximo yt el minimo de los valores de x.
+range=max(x)-min(x)
+range
+
+#Para calcular la varianza hacemos 1 entre la cantidad total de numeros con la funcion length, y la segunda parte va a ser la suma de las diferencias de cada valor dentro de la lista (x) menos la media que previamente hemos calculado, elevado a 2.
+var=(1/(length(x)-1))*sum((x-mean(x))^2)
+var
+var(x)
+
+#Para saber la desviacion estandar tenemos que hacer la raiz cuadrada de la varianza.
+desv=sqrt(var)
+desv
+
+
+#Para calcular la mediana calculamos el punto medio con length entre 2, y usamos ese dato como índice para saber el valor medio, utilizando la funcion sort() previamente para ponerlos en orden de menor a mayor.
+
+valmedio=length(x)/2
+
+mediana=sort(x)[valmedio]
+mediana
+
+#Para calcular la moda utilizamos la funcion table, para conocer los valores que mas se repiten.
+table(x)
+
+#Por último, para tener una idea general, podemos utilizar la funcion summary(x)
+summary(x)
+
